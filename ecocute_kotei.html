@@ -1,0 +1,758 @@
+<link rel="stylesheet" href="../control/css/flexslider.css">
+<script src="../control/js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+	var $ = jQuery.noConflict();
+	$(window).load(function() {
+		$('.flexslider').flexslider({
+		animation: "slide",
+		directionNav: true,
+		controlNav: true, 
+		animationLoop: true,
+		slideshowSpeed: 5000,
+		slideToStart: 1,
+		animationDuration: 300,
+		slideshow: true,
+		easing: "linear",
+		animationSpeed: 800,
+		});
+	});
+</script>
+
+<!-- ANIMATION -->
+<script type="text/javascript" src="../control/js/wow.min.js"></script>
+<script>
+    wow = new WOW(
+        {
+            boxClass: 'wow', // default
+            animateClass: 'animated', // default
+            offset:0,// アニメーションをスタートさせる距離
+            mobile: false
+        }
+        );
+    wow.init();
+</script>
+
+<!--   More   -->
+<link rel="stylesheet" href="../control/css/more.css">
+<script type="text/javascript" src="../control/js/more.js"></script>
+
+<script src="../../ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
+<script language="javascript" type="text/javascript" src="../adminneo/asset/validation/js/jquery.validate.js"></script>
+<script language="javascript" type="text/javascript" src="../adminneo/asset/validation/js/messages_ja.js"></script>
+<script language="javascript" type="text/javascript" src="../adminneo/asset/validation/js/jquery.validate.japlugin.js"></script>
+<link rel="stylesheet" type="text/css" href="../adminneo/asset/validation/css/screen.css" />
+<script>
+    $(function(){
+        $("#form1").validate({
+            debug: false,
+            rules: {
+                mail_1 :{
+                    required: true,
+                    email: true
+                },
+                mail_2 :{
+                    equalTo: "#mail_1"
+                },
+                t1 :{
+                    digits: true
+                },
+                t2 :{
+                    digits: true
+                },
+                t3 :{
+                    digits: true
+                },
+                zipCode :{
+                    digits: true
+                }
+            },
+            groups: {
+                tel: "t1 t2 t3",
+            },
+            errorPlacement: function(error, element) {
+                if(element.attr("name")=="mail_1") {
+                    error.appendTo("#err_mail_1");
+                }else if(element.attr("name")=="mail_2"){
+                    error.appendTo("#err_mail_2");
+                }else{
+                    error.appendTo(element.parents("td").children("p:last"));
+                }
+
+
+            },
+            focusInvalid: false,
+            invalidHandler: function(form, validator) {
+                if (!validator.numberOfInvalids())
+                    return;
+
+                $('html, body').animate({
+                    scrollTop: ($(validator.errorList[0].element).offset().top - 300)
+                }, 1000);
+
+            }
+        });
+    });
+</script><script>
+    function jump1func(){
+        obj = document.jump1.linkselect1;
+        index = obj.selectedIndex;
+//            alert(index);
+        href = obj.options[index].value;
+        var s = "";
+        if(index == 0){
+            s = "/ecocute/#name1";
+        }else{
+            s = "/ecocute/?lineup="+ href+ "&#name1";
+        }
+        location.href = s;
+    }
+    function jump2func(){
+        obj = document.jump2.linkselect2;
+        index = obj.selectedIndex;
+//            alert(index);
+        href = obj.options[index].value;
+        var s = "";
+        if(index == 0){
+            s = "/ecocute/#name2";
+        }else{
+            s = "/ecocute/?const="+ href+ "&#name2";
+        }
+        location.href = s;
+    }
+
+    $(function(){
+        $("#linkselect1").val('');
+        $("#linkselect2").val('');
+//            alert("//");
+    });
+</script>
+
+</head>
+<body>
+	<div id="wrapper">
+    <a id="pagetop"></a>
+		<!--  Main Contents  -->
+        <main class="main">
+        	<article id="products" class="low_titlebg">
+
+
+                <!--  メインビジュアル  -->
+				<section class="main_title_area">
+                	<div class="inner wow fadeIn" data-wow-duration="1.5s">
+
+						<h1 class="main_title ecocute">エコキュート</h1>
+                        <p class="main_en_title">EcoCute</p>                
+                        
+                    </div>
+                </section><!--  .main_title_area  -->
+                <p class="breadcrumbs"><a href="../HPC-index.html"><span class="f_con">A</span></a><span class="fa fa-angle-right"></span>エコキュート</p>
+                
+                
+                                
+                <!--  固定ボタン 
+                <p class="fixed_btn"><a href="#formarea"><img src="../control/img/fixed_btn_built-in.png" alt="エコキュートのお問い合わせはこちら"></a></p>
+                -->
+
+
+
+                <!--  製品ポイント  -->
+				<section class="p_point_area wrap15">
+                	<div class="inner clearfix">
+                    
+                    	<h2 class="point_title">エコキュート取付け工事の特徴・強み</h2>
+                        <p class="photo"><img src="../control/img/eco_img01.jpg" alt="エコキュート"></p>
+                        <p class="point_txt">エコキュートは、設置されるお客様の環境によりメリットが大きく変わる設備です。<br>スペース的な問題などで設置が難しかったり配管のラインなどの現地調査が非常に重要となります。</p>
+                        
+                        <div class="iine s">
+                        	<p class="icon s wow bounce" data-wow-duration="1.0s"><img src="../control/img/iine_icon.png" alt=""></p>
+                            当社では、経験豊富なスタッフが必ず現地調査を行い、綿密なヒアリングを元に施工のご提案をいたしますので、安心感が違います。
+                        </div>
+                        
+                    </div>
+                </section><!--  .p_point_area  -->
+                               <!--  今月のおすすめ製品  -->
+				<section class="p_pickup_area">
+                	<div class="inner clearfix">
+                    	<h3 class="pickup_title"><span>今月のおすすめ製品</span></h3>
+
+                        <ul class="pickup_bn_list clearfix pc_display wow zoomIn" data-wow-duration="1.0s">
+                                                                                                                            <li><a href="detail-5_2Ephp.html"><img src="../productimg/img/2016111421131211.jpg"></a></li>
+                                                                                                                                                            <li><a href="detail-15_2Ephp.html"><img src="../productimg/img/2016111421150211.jpg"></a></li>
+                                                                                    </ul>
+
+                        <section class="flexslider sp_display_b">
+                            <ul class="slides pickup_bn_list clearfix">
+                                                                                                                                                <li><a href="detail-5_2Ephp.html"><img src="../productimg/img/2016111421131212.jpg"></a></li>
+                                                                                                                                                                                    <li><a href="detail-15_2Ephp.html"><img src="../productimg/img/2016111421150212.jpg"></a></li>
+                                                                                                </ul>
+                        </section>
+                    
+                    </div>
+                </section><!--  .p_pickup_area  -->
+                
+
+                                <!--  製品ラインナップ  -->
+                <a name="name1"></a>
+				<section class="p_lineup_area">
+                	<div class="inner clearfix">
+                        <form name="jump1">
+                    	<section class="lineup_title_area clearfix">
+                            <h3 class="lineup_title">エコキュート ラインナップ</h3>
+                            <select name="category" id="linkselect1" class="lineup_select" onChange="jump1func()">
+                                <option value="">全メーカー</option>
+                                                                    <option value="corona">コロナ</option>
+                                                                    <option value="hitachi">日立</option>
+                                                                    <option value="mitsubishi">三菱電機</option>
+                                                                    <option value="panasonic">パナソニック</option>
+                                                                    <option value="daikin">ダイキン</option>
+                                                            </select>
+                        </section>
+                        </form>
+                                            	<ul class="products_list clearfix">
+                                                            <li>
+                                    <a href="detail-26_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201802230957431.jpg" data-original="/productimg/img/201802230957431.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                        <p class="model_number">SRT-S373U</p>
+                                        <h3 class="products_title">三菱 エコキュート Sシリーズ ハイパワー給湯 （SRT-S373U/370L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">224,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-3_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611081215451.jpg" data-original="/productimg/img/201611081215451.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/5.png"></p>
+                                        <p class="model_number">BHP-FS46RH1</p>
+                                        <h3 class="products_title">日立 エコキュート 薄型プレミアムタイプ（BHP-FS46RH1/460L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">265,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-5_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611091639091.jpg" data-original="/productimg/img/201611091639091.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/9.png"></p>
+                                        <p class="model_number">CHP-37AX5</p>
+                                        <h3 class="products_title">コロナ エコキュート 角型フルオート（CHP-37AX5/370L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">238,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-6_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611091651281.jpg" data-original="/productimg/img/201611091651281.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/9.png"></p>
+                                        <p class="model_number">CHP-46AX5</p>
+                                        <h3 class="products_title">コロナ エコキュート 角形フルオート（CHP-46AX5/460L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">259,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-7_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611091710031.jpg" data-original="/productimg/img/201611091710031.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/9.png"></p>
+                                        <p class="model_number">CHP-E372AX5</p>
+                                        <h3 class="products_title">コロナ エコキュート うす型フルオート インターホンリモコンセット（CHP-E372AX5/370L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">259,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-8_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611091717281.jpg" data-original="/productimg/img/201611091717281.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/9.png"></p>
+                                        <p class="model_number">CHP-E462AX5</p>
+                                        <h3 class="products_title">コロナ エコキュート うす型フルオート インターホンリモコンセット（CHP-E462AX5/460L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">287,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-9_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611111008531.jpg" data-original="/productimg/img/201611111008531.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/5.png"></p>
+                                        <p class="model_number">BHP-FV46RD</p>
+                                        <h3 class="products_title">日立 エコキュート 角形プレミアム高効率タイプ（BHP-FV46LD/460L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">307,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-10_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611111016061.jpg" data-original="/productimg/img/201611111016061.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/5.png"></p>
+                                        <p class="model_number">BHP-FV37RD</p>
+                                        <h3 class="products_title">日立 エコキュート 角形プレミアム高効率タイプ（BHP-FV37RD/370L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">284,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-11_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611111039431.jpg" data-original="/productimg/img/201611111039431.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                        <p class="model_number">SRT-S373Z</p>
+                                        <h3 class="products_title">三菱 エコキュート Sシリーズ（SRT-S373Z/370L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">231,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-12_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611111047481.jpg" data-original="/productimg/img/201611111047481.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                        <p class="model_number">SRT-S373UZ</p>
+                                        <h3 class="products_title">三菱 エコキュート Sシリーズ（SRT-S373UZ/370L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">243,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-13_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611111052511.jpg" data-original="/productimg/img/201611111052511.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                        <p class="model_number">SRT-S433UZ</p>
+                                        <h3 class="products_title">三菱 エコキュート Sシリーズ（SRT-S433UZ/430L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">263,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="detail-14_2Ephp.html">
+                                        <figure class="products_img">
+                                                                                        <img src="../productimg/img/201611111102491.jpg" data-original="/productimg/img/201611111102491.jpg" class="lazy">
+                                                                                    </figure>
+                                        <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                        <p class="model_number">SRT-S373</p>
+                                        <h3 class="products_title">三菱 エコキュート Sシリーズ（SRT-S373/370L）</h3>
+                                        <p class="products_price"><span class="price_title">特価</span><span class="price_txt">212,000</span>円(税込)</p>
+                                    </a>
+                                </li>
+                            
+
+                                                        <p class="more_btn">もっと見る<span class="f_con">û</span></p>
+                            <div class="more_area">
+                                <!--全部だす-->
+                                                                    <li>
+                                        <a href="detail-15_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201611111107121.jpg" data-original="/productimg/img/201611111107121.jpg" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                            <p class="model_number">SRT-S463</p>
+                                            <h3 class="products_title">三菱 エコキュート Sシリーズ（SRT-S463/460L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">231,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="detail-17_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201611111124391.jpg" data-original="/productimg/img/201611111124391.jpg" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                            <p class="model_number">SRT-S46U</p>
+                                            <h3 class="products_title">三菱 エコキュート Sシリーズ（SRT-S46U/460L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">244,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="detail-18_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201611111217121.jpg" data-original="/productimg/img/201611111217121.jpg" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                            <p class="model_number">SRT-S553</p>
+                                            <h3 class="products_title">三菱 エコキュート Sシリーズ（SRT-S553/550L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">252,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="detail-19_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201611111222061.jpg" data-original="/productimg/img/201611111222061.jpg" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                            <p class="model_number">SRT-P373UB</p>
+                                            <h3 class="products_title">三菱 エコキュート Pシリーズ（SRT-P373UB/370L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">364,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="detail-20_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201611111227361.jpg" data-original="/productimg/img/201611111227361.jpg" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>
+                                            <p class="model_number">SRT-P463UB</p>
+                                            <h3 class="products_title">三菱 エコキュート Pシリーズ（SRT-P463UB/460L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">393,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="detail-25_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201705191244041.png" data-original="/productimg/img/201705191244041.png" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/5.png"></p>
+                                            <p class="model_number">BHP-F37RD</p>
+                                            <h3 class="products_title">日立 エコキュート [水道直圧給湯] フルオート標準タンク（BHP-F37RD/370L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">234,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="detail-21_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201611111351041.jpg" data-original="/productimg/img/201611111351041.jpg" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/9.png"></p>
+                                            <p class="model_number">CHP-HXE46AX4</p>
+                                            <h3 class="products_title">コロナ エコキュート 角型フルオートプレミアム インターホンリモコンセット（CHP-HXE46AX4/460L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">370,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="detail-22_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201611111400331.jpg" data-original="/productimg/img/201611111400331.jpg" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/9.png"></p>
+                                            <p class="model_number">CHP-HXE37AX4</p>
+                                            <h3 class="products_title">コロナ エコキュート 角型フルオートプレミアム インターホンリモコンセット（CHP-HXE37AX4/370L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">343,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="detail-2_2Ephp.html">
+                                            <figure class="products_img">
+                                                                                                    <img src="../productimg/img/201611081215091.jpg" data-original="/productimg/img/201611081215091.jpg" class="lazy">
+                                                                                            </figure>
+                                            <p class="maker_logo"><img src="../control/img/makerlogo/5.png"></p>
+                                            <p class="model_number">BHP-F37JDK</p>
+                                            <h3 class="products_title">日立 エコキュート 角形標準タイプ（BHP-F37JDK/370L）</h3>
+                                            <p class="products_price"><span class="price_title">特価</span><span class="price_txt">273,000</span>円(税込)</p>
+                                        </a>
+                                    </li>
+                                                            </div><!--  .more_area  -->
+                                                    </ul>
+
+                    	<!--<ul class="products_list clearfix">
+                        	<li><a href="detail_2Ephp.html"><figure class="products_img"><img src="../control/img/product_img01.jpg"></figure><p class="maker_logo"><img src="../control/img/pana_logo.jpg"></p><p class="model_number">NP-45MD7S</p><h3 class="products_title">パナソニック エコキュート(パネルタイプ)</h3><p class="products_price"><span class="price_title">特価</span><span class="price_txt">95,000</span>円(税込)</p></a></li>
+                        </ul>-->
+                                            </div>
+                </section><!--  .p_point_area  -->
+                
+                                <!--  施工事例  -->
+             <a name="name2"></a>
+				<section class="p_works_area">
+                	<div class="inner clearfix">
+                        <form name="jump2">
+                    	<section class="works_title_area clearfix">
+                            <h3 class="works_title">エコキュート 施工事例</h3>
+                            <!--
+                            <select id="linkselect2" class="works_select" onChange="jump2func()">
+                                <option value="">全メーカー</option>
+                                                                    <option value="corona">コロナ</option>
+                                                                    <option value="hitachi">日立</option>
+                                                                    <option value="mitsubishi">三菱電機</option>
+                                                                    <option value="panasonic">パナソニック</option>
+                                                                    <option value="daikin">ダイキン</option>
+                                                            </select>
+                            -->
+                        </section>
+                        </form>
+                                            	<ul class="works_list clearfix">
+                                                            <li>
+                                    <a href="../works/ecocute/detail-389_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201812301608504.jpg" data-original="/conimg/img/201812301608504.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                                                        <p class="model_number">EQ37TFTV</p>
+                                        <h3 class="works_list_title">神奈川県川崎市にてダイキンエコキュート交換工事を行いました 神奈川県川崎市 Ｉ 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-362_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201808150143524.jpg" data-original="/conimg/img/201808150143524.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>                                                                                                                        <p class="model_number">SRT-S433UZ</p>
+                                        <h3 class="works_list_title">三菱エコキュート（SRT-S433UZ）設置工事 神奈川県厚木市 Ｙ 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-236_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201801270221104.jpg" data-original="/conimg/img/201801270221104.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                                                        <p class="model_number">BHP-FW37RD</p>
+                                        <h3 class="works_list_title">日立水道直圧エコキュート（BHP-FW37RDフルオート）設置工事 千葉県習志野市 Y 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-239_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201801270241494.jpg" data-original="/conimg/img/201801270241494.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>                                                                                                                        <p class="model_number">SRT-S373</p>
+                                        <h3 class="works_list_title">三菱電機製370リットル角型エコキュート（SRT-S373）交換工事 静岡県磐田市 Y 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-244_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201801270306344.jpg" data-original="/conimg/img/201801270306344.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                                                        <p class="model_number">SRT-W373</p>
+                                        <h3 class="works_list_title">三菱電機製370リットル角型エコキュート（SRT-W373）交換工事一式 神奈川県南足柄市 U 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-218_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201611211536374.jpg" data-original="/conimg/img/201611211536374.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                                                        <p class="model_number">SRT-HPK46WDX7</p>
+                                        <h3 class="works_list_title">エコキュート設置工事 宮城県黒川郡 H 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-219_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201611211549504.jpg" data-original="/conimg/img/201611211549504.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                                                        <p class="model_number">SRT-HP37W5</p>
+                                        <h3 class="works_list_title">エコキュート設置工事 宮城県仙台市泉区 I 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-220_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201611211559254.jpg" data-original="/conimg/img/201611211559254.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                                                        <p class="model_number">SRT-HP46WX6</p>
+                                        <h3 class="works_list_title">エコキュート設置工事 宮城県多賀城市 T 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-221_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201611211607154.jpg" data-original="/conimg/img/201611211607154.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                                                        <p class="model_number">BHP-F46HU</p>
+                                        <h3 class="works_list_title">日立エコキュート設置工事 宮城県松島市 M 様</h3>
+                                    </a>
+                                </li>
+                                                            <li>
+                                    <a href="../works/ecocute/detail-222_2Ephp.html">
+                                        <figure class="works_img">
+                                                                                            <img src="../conimg/img/201611211615244.jpg" data-original="/conimg/img/201611211615244.jpg" class="lazy">
+                                                                                    </figure>
+                                                                                                                        <p class="model_number">SRT-HP460W6</p>
+                                        <h3 class="works_list_title">エコキュート設置工事 宮城県宮城郡利府町 S 様</h3>
+                                    </a>
+                                </li>
+                            
+                                                        <p class="more_btn blue">もっと見る<span class="f_con">û</span></p>
+                            <div class="more_area">
+                                                                    <li>
+                                        <a href="../works/ecocute/detail-22_2Ephp.html">
+                                            <figure class="works_img">
+                                                                                                    <img src="../conimg/img/201611111549074.jpg" data-original="/conimg/img/201611111549074.jpg" class="lazy">
+                                                                                        </figure>
+                                                                                                                            <p class="model_number">BHP-FS46LD</p>
+                                        <h3 class="works_list_title">エコキュート設置工事 神奈川県 S 様</h3>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../works/ecocute/detail-23_2Ephp.html">
+                                            <figure class="works_img">
+                                                                                                    <img src="../conimg/img/201611111550384.jpg" data-original="/conimg/img/201611111550384.jpg" class="lazy">
+                                                                                        </figure>
+                                                                                                                            <p class="model_number">SRT-S37</p>
+                                        <h3 class="works_list_title">エコキュート設置工事  O 様</h3>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../works/ecocute/detail-24_2Ephp.html">
+                                            <figure class="works_img">
+                                                                                                    <img src="../conimg/img/201611111552124.jpg" data-original="/conimg/img/201611111552124.jpg" class="lazy">
+                                                                                        </figure>
+                                                                                                                            <p class="model_number">SRT-HP37WX6</p>
+                                        <h3 class="works_list_title">エコキュート設置工事 神奈川県川崎市 S 様</h3>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../works/ecocute/detail-25_2Ephp.html">
+                                            <figure class="works_img">
+                                                                                                    <img src="../conimg/img/201611091653214.jpg" data-original="/conimg/img/201611091653214.jpg" class="lazy">
+                                                                                        </figure>
+                                                                                        <p class="maker_logo"><img src="../control/img/makerlogo/3.png"></p>                                                                                                                        <p class="model_number">SRT-S46U</p>
+                                        <h3 class="works_list_title">エコキュート設置工事 千葉県鴨川市 K 様</h3>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="../works/ecocute/detail-26_2Ephp.html">
+                                            <figure class="works_img">
+                                                                                                    <img src="../conimg/img/201611111554004.jpg" data-original="/conimg/img/201611111554004.jpg" class="lazy">
+                                                                                        </figure>
+                                                                                                                            <p class="model_number">SRT-S37</p>
+                                        <h3 class="works_list_title">エコキュート設置工事 宮城県仙台市 Y 様</h3>
+                                        </a>
+                                    </li>
+                                                            </div><!--  .more_area  -->
+                                                    </ul>
+                                            </div>
+                </section><!--  .p_works_area  -->
+                
+
+
+                <!--  取付け工事について  -->
+				<section class="p_construction_area">
+                	<div class="inner clearfix">
+                    
+                    
+                    	<h3 class="construction_title">エコキュート 取付け工事の流れ</h3>
+                        
+                        <p class="flow_img wow slideInUp" data-wow-duration="1.0s"><img src="../control/img/det_flow04.png"></p>
+                        
+                        
+                        <p class="flow_sub_title">施工前</p>
+                                
+                        <ul class="flow_list clearfix wow slideInUp" data-wow-duration="1.0s">
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-01</span><br class="pc_br">現地調査・設置の可否</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">配管のラインの確認、コストダウンメリットの調査、設置スペースが確保出来るかというエコキュート導入に重要な項目をしっかりと調査いたします。<br>エコキュートの設置が可能か、また設置した場合に希望されているメリットが受けられるかを判断しその場でお伝えいたします。</p>
+                                    <p class="cau_txt">※設置が出来ない、設置メリットがない場合は、お客様の現状に合わせた給湯設備をご紹介・ご提案します。</p>
+                                </div>
+                            </li>
+                            <li class="arrow"></li>
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-02</span><br class="pc_br">お見積り</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">現地調査の結果、設置が可能と判断された場合に、調査結果を踏まえてお見積りを行うので、追加費用等は一切発生いたしません。また、ご希望のお客様には電気量の削減シミュレーションをご提供いたします。</p>
+                                    <p class="cau_txt">※実際の施工の際に、イレギュラーな事象があった場合、お客様からの追加要望があった場合はその費用をご説明させていただきます。</p>
+                                </div>
+                            </li>
+                            <li class="arrow"></li>
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-03</span><br class="pc_br">ご契約</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">施工内容・お見積りにご納得頂きましたらご契約となります。ご契約後は、スムーズに施工日をご調整いたします。</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        
+                        
+                        <p class="flow_sub_title">施工時<br class="sp_br"><span>（目安の工事時間：基本的に1日）</span></p>
+                                
+                        <ul class="flow_list clearfix wow slideInUp" data-wow-duration="1.0s">
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-04</span><br class="pc_br">既設の撤去</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">ご不要になった既設の給湯器を撤去いたします。</p>
+                                </div>
+                            </li>
+                            <li class="arrow"></li>
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-05</span><br class="pc_br">設置場所の確保・配管の確認<br class="pc_br">（エコベース・基礎工事）</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">エコキュートを安全に設置するため、予め事前調査で確認しておいた設置場所の配管の確認を行った上で、基礎工事を行いエコベースの設置をいたします。</p>
+                                </div>
+                            </li>
+                            <li class="arrow"></li>
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-06</span><br class="pc_br">本体の固定・配管の接続</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">基礎のエコベースに対して本体を固定し、配管の接続を行います。非常に重量のある装置になりますので、本体の固定はしっかりと行います。</p>
+                                </div>
+                            </li>
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-07</span><br class="pc_br">電気工事・配管工事・室内の配線工事</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">事前調査により電気工事や配管工事が必要な場合は、その準備を予めしておきますので、しっかりとご対応いたします。その後、必要な室内の配管工事を行います。</p>
+                                </div>
+                            </li>
+                            <li class="arrow"></li>
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-08</span><br class="pc_br">コントロールパネル設置</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">コントロールパネルを現地調査で打ち合わせした場所に設置いたします。</p>
+                                </div>
+                            </li>
+                            <li class="arrow"></li>
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-09</span><br class="pc_br">調整</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">設備の設置個所や配管、コントロールパネルなどの配置や隙間を調整いたします。</p>
+                                </div>
+                            </li>
+                            <li>
+                            	<h3 class="flow_title more_btn02"><span>STEP-10</span><br class="pc_br">運転確認</h3>
+                                <div class="sp_more_area02">
+                                	<p class="flow_txt">実際に動作確認を行い作業が終了です。発電状況の確認などのために、後日ご訪問する場合もございます。</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        
+                        <section class="staff_txt_box clearfix wow flipInX" data-wow-duration="1.0s">
+                        	
+                        	<p class="ill"><img src="../control/img/point_ill.png" alt=""></p>
+                        	<p class="staff_txt_title">スタッフから一言</p>
+                            
+                        	<p class="staff_txt">エコキュートは設置環境によって、そのメリットや機能に大きな違いが出る設備です。当社のスタッフは現地調査の段階から多くのお客様へご提案を行ってきておりますので、ご安心してご相談下さい。</p>
+                        	<p class="staff_txt">お客様の目線でご提案いたしますので、現場の環境によっては別の設備をご紹介、ご提案させていただくこともございます。</p>
+                        	<p class="staff_txt">※施工後に、お客様で出来るメンテナンス方法やユニットの使用方法など、詳細にご説明いたしますので気になることはお気軽にご相談下さい。</p>
+                            
+                        </section>
+                        
+
+                    </div>
+                </section>
+                <!--  .p_construction_area  -->
+                
+                
+                <!--  住設ジャパンについて  -->
+								
+                <section id="foot_strong_area">
+                    <div class="in_contents">
+                    	
+                        <p class="sp_display_b tac"><img src="../control/img/logo.jpg" width="200" alt="住設ジャパン"></p>
+                        <p class="foot_strong_title"><img src="../control/img/form_foot_title.png" alt="昭和シェルブランドの安心感" class="pc_display"><img src="../control/img/form_foot_img_sp.jpg" alt="" class="sp_display"></p>
+                        
+                    </div>
+                </section>
+ 
+
+
+
+    
+                
+                
+                <section class="form_area">
+                	<div class="inner clearfix">
+                           <!--フォームのPHP  -->
+                            
+
+                </form>
+
+                
+                
+            </article>
+        </main>
